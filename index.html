@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+<style>
+    form{
+        margin: 20px;
+        padding: 10px;
+    }
+
+    div>input{
+        margin: 10px 0px;
+    }
+   
+</style>
+
+<form action="do.php" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
+    <div id="picInput">
+        上傳圖片:<br>
+         <input type="file" class="d-block btn btn-outline-secondary" name='myfile[]'>
+    </div>
+    <input id="addBtn" class="btn btn-info" type="button" onclick="addPic()" value="新增圖片"><br/><br/>
+    <input class="btn btn-success" type="submit" value="上傳檔案">
+</form>
+
+    <script>
+        function addPic(){
+            let addBtn =  document.getElementById('addBtn');
+            let input = document.createElement("input");
+            input.type = 'file'; 
+            input.name = 'myfile[]'; input.className = 'd-block btn btn-outline-secondary';
+            let picInput = document.getElementById('picInput');
+            picInput.appendChild(input);
+        }
+    </script>
+</body>
+</html>
